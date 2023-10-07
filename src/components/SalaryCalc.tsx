@@ -1,6 +1,8 @@
 'use client'
 import salaryService, { SalaryBreakdown } from "@/services/salary-service";
-import { Container, Text, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, Box, SimpleGrid, Center, Card, CardBody } from "@chakra-ui/react";
+import { Card, CardContent, Container, TextField, Typography } from "@mui/material";
+import Grid from '@mui/material/Unstable_Grid2';
+
 import { useMemo, useState } from "react";
 
 const SalaryCalc = () => {
@@ -10,12 +12,12 @@ const SalaryCalc = () => {
     return (
         <>
             <div>
-                <Card variant={"outline"}><CardBody>
-                    <SimpleGrid columns={1} spacing={10}>
-                        <Container>
-                            <Center flexDirection="column">
-                                <Text fontSize='xl' mb={3}>Enter your Salary:</Text>
-                                <NumberInput
+                <Card><CardContent>
+                    {/* <SimpleGrid columns={1} spacing={10}> */}
+                    <Container>
+                        {/* <Center flexDirection="column"> */}
+                        <Typography fontSize='xl' mb={3}>Enter your Salary:</Typography >
+                        {/* <NumberInput
                                     maxW={48}
                                     size='lg'
                                     onChange={(valueString) => setSalary(Number(valueString))}
@@ -26,27 +28,28 @@ const SalaryCalc = () => {
                                         <NumberIncrementStepper />
                                         <NumberDecrementStepper />
                                     </NumberInputStepper>
-                                </NumberInput>
-                            </Center>
-                        </Container>
-                        <Container>
-                            <Center flexDirection="column">
-                                <Text fontSize='2xl'>Take home salary:</Text>
-                                <Text fontSize='2xl'>{Math.round(salaryBreakdown.takeHomeSalary).toFixed(2)}</Text>
-                            </Center>
-                        </Container>
-                        <Container>
-                            <Center flexDirection="column">
-                                <Text fontSize='2xl'>Total Deductable</Text>
-                                <Text fontSize='2xl'>{Math.round(salaryBreakdown.totalDeduction).toFixed(2)}</Text>
-                                <br />
-                                <Text fontSize='xl'>Breakdown:</Text>
-                                <Text fontSize='xl'>Tax: {Math.round(salaryBreakdown.tax).toFixed(2)}</Text>
-                                <Text fontSize='xl'>EPF: {Math.round(salaryBreakdown.epf).toFixed(2)}</Text>
-                            </Center>
-                        </Container>
-                    </SimpleGrid>
-                </CardBody></Card>
+                                </NumberInput> */}
+                        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+                        {/* </Center> */}
+                    </Container>
+                    <Container>
+                        {/* <Center flexDirection="column"> */}
+                        <Typography fontSize='2xl'>Take home salary:</Typography>
+                        <Typography fontSize='2xl'>{Math.round(salaryBreakdown.takeHomeSalary).toFixed(2)}</Typography>
+                        {/* </Center> */}
+                    </Container>
+                    <Container>
+                        {/* <Center flexDirection="column"> */}
+                        <Typography fontSize='2xl'>Total Deductable</Typography>
+                        <Typography fontSize='2xl'>{Math.round(salaryBreakdown.totalDeduction).toFixed(2)}</Typography>
+                        <br />
+                        <Typography fontSize='xl'>Breakdown:</Typography>
+                        <Typography fontSize='xl'>Tax: {Math.round(salaryBreakdown.tax).toFixed(2)}</Typography>
+                        <Typography fontSize='xl'>EPF: {Math.round(salaryBreakdown.epf).toFixed(2)}</Typography>
+                        {/* </Center> */}
+                    </Container>
+                    {/* </SimpleGrid> */}
+                </CardContent></Card>
             </div>
         </>
     )
