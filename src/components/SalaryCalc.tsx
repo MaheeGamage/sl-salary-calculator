@@ -1,8 +1,7 @@
 'use client'
-import salaryService, { SalaryBreakdown } from "@/services/salary-service";
-import { Card, CardContent, Container, TextField, Typography } from "@mui/material";
-import Grid from '@mui/material/Unstable_Grid2';
 
+import salaryService from "@/services/salary-service";
+import { Card, CardContent,  Container, FormControl,  InputAdornment, InputLabel, OutlinedInput,  Typography } from "@mui/material";
 import { useMemo, useState } from "react";
 
 const SalaryCalc = () => {
@@ -12,44 +11,38 @@ const SalaryCalc = () => {
     return (
         <>
             <div>
-                <Card><CardContent>
-                    {/* <SimpleGrid columns={1} spacing={10}> */}
-                    <Container>
-                        {/* <Center flexDirection="column"> */}
-                        <Typography fontSize='xl' mb={3}>Enter your Salary:</Typography >
-                        {/* <NumberInput
-                                    maxW={48}
-                                    size='lg'
-                                    onChange={(valueString) => setSalary(Number(valueString))}
+                <Card>
+                    <CardContent>
+                        <Typography variant="h4" textAlign={"center"} sx={{mb:6}}>Salary Calculator</Typography>
+                        <Container sx={{mb:4, mt:4}}>
+                            <FormControl>
+                                <InputLabel htmlFor="outlined-adornment-amount">Enter your Salary</InputLabel>
+                                <OutlinedInput
+                                    id="outlined-adornment-amount"
+                                    type="number"
+                                    startAdornment={<InputAdornment position="start">Rs</InputAdornment>}
+                                    label="Enter your Salary"
                                     value={salary}
-                                >
-                                    <NumberInputField />
-                                    <NumberInputStepper>
-                                        <NumberIncrementStepper />
-                                        <NumberDecrementStepper />
-                                    </NumberInputStepper>
-                                </NumberInput> */}
-                        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-                        {/* </Center> */}
-                    </Container>
-                    <Container>
-                        {/* <Center flexDirection="column"> */}
-                        <Typography fontSize='2xl'>Take home salary:</Typography>
-                        <Typography fontSize='2xl'>{Math.round(salaryBreakdown.takeHomeSalary).toFixed(2)}</Typography>
-                        {/* </Center> */}
-                    </Container>
-                    <Container>
-                        {/* <Center flexDirection="column"> */}
-                        <Typography fontSize='2xl'>Total Deductable</Typography>
-                        <Typography fontSize='2xl'>{Math.round(salaryBreakdown.totalDeduction).toFixed(2)}</Typography>
-                        <br />
-                        <Typography fontSize='xl'>Breakdown:</Typography>
-                        <Typography fontSize='xl'>Tax: {Math.round(salaryBreakdown.tax).toFixed(2)}</Typography>
-                        <Typography fontSize='xl'>EPF: {Math.round(salaryBreakdown.epf).toFixed(2)}</Typography>
-                        {/* </Center> */}
-                    </Container>
-                    {/* </SimpleGrid> */}
-                </CardContent></Card>
+                                    onChange={(event) => setSalary(Number(event.target.value))}
+                                />
+                            </FormControl>
+                        </Container>
+                        <Container sx={{display: 'flex', alignItems: 'center', flexDirection: 'column', mb:2}}>
+                            <Typography variant="h5">Take Home Salary:</Typography>
+                            {/* <Typography variant="h5">{Math.round(salaryBreakdown.takeHomeSalary).toFixed(2)}</Typography> */}
+                            <Typography variant="h5">{salaryBreakdown.takeHomeSalary.toLocaleString('en')}</Typography>
+                        </Container>
+                        <Container sx={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+                            <Typography variant="h5">Total Deductable</Typography>
+                            <Typography variant="h5">{salaryBreakdown.totalDeduction.toLocaleString('en')}</Typography>
+                            <br />
+                            <Typography variant="h6" fontWeight={'bold'}>Breakdown:</Typography>
+                            <Typography variant="h6">Tax: {salaryBreakdown.tax.toLocaleString('en')}</Typography>
+                            <Typography variant="h6">EPF: {salaryBreakdown.epf.toLocaleString('en')}</Typography>
+
+                        </Container>
+                    </CardContent>
+                </Card>
             </div>
         </>
     )
