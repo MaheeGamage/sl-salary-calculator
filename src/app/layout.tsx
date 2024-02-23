@@ -1,7 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import customTheme from '@/style/theme'
 import StickyFooter from '@/components/StickyFooter'
 
 const inter = Inter({ subsets: ['latin'] })
