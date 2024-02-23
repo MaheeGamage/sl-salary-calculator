@@ -10,13 +10,12 @@ import Link from '@mui/material/Link';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
+    <Typography variant="body2" color="text.secondary" align='center'>
+      {'Made by '}
+      <Link color="inherit" href="https://mahee.me/" target="_blank">
+        Mahee
+      </Link>
+      {/* {new Date().getFullYear()} */}
     </Typography>
   );
 }
@@ -43,9 +42,9 @@ export default function StickyFooter() {
       }}
     >
       <Container maxWidth="sm">
-        <Typography variant="body2" color="text.secondary">
+        {/* <Typography variant="body2" color="text.secondary" align='center'>
           My sticky footer can be found here.
-        </Typography>
+        </Typography> */}
         <Copyright />
       </Container>
     </Box>
