@@ -1,3 +1,5 @@
+import { EPF_EMPLOYEE_SALARY_PERCENTAGE } from "@/constants";
+
 export type SalaryBreakdown = {
     totalSalary: number;
     epf: number;
@@ -19,7 +21,7 @@ const getSalaryBreakdown = (salary: number): SalaryBreakdown => {
         takeHomeSalary: 0,
     })
 
-    const epf = salary * 0.08;
+    const epf = salary * EPF_EMPLOYEE_SALARY_PERCENTAGE;
 
     let tax = 0;
     let totalDeduction = epf + tax;
@@ -28,7 +30,7 @@ const getSalaryBreakdown = (salary: number): SalaryBreakdown => {
     if (salary <= 100000) {
         tax = 0;
     }
-    else if (salary < 100000 && salary <= 141667) {
+    else if (salary > 100000 && salary <= 141667) {
         tax = (salary - 100000) * 0.06;
     }
     else if (salary > 141667 && salary <= 183333) {
