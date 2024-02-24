@@ -1,7 +1,7 @@
 'use client'
 
 import salaryService from "@/services/salary-service";
-import { Card, CardContent,  Container, FormControl,  InputAdornment, InputLabel, OutlinedInput,  Typography } from "@mui/material";
+import { Card, CardContent, Container, FormControl, InputAdornment, InputLabel, OutlinedInput, Typography } from "@mui/material";
 import { useMemo, useState } from "react";
 
 const SalaryCalc = () => {
@@ -13,8 +13,9 @@ const SalaryCalc = () => {
             <div>
                 <Card>
                     <CardContent>
-                        <Typography variant="h4" textAlign={"center"} sx={{mb:6}}>Salary Calculator</Typography>
-                        <Container sx={{mb:4, mt:4}}>
+                        <Typography variant="h4" textAlign={"center"}>Salary Calculator</Typography>
+                        <Typography variant="h6" textAlign={"center"} sx={{ mb: 4 }}>(Sri Lanka)</Typography>
+                        <Container sx={{ mb: 4, mt: 4 }}>
                             <FormControl>
                                 <InputLabel htmlFor="outlined-adornment-amount">Enter your Salary</InputLabel>
                                 <OutlinedInput
@@ -27,12 +28,12 @@ const SalaryCalc = () => {
                                 />
                             </FormControl>
                         </Container>
-                        <Container sx={{display: 'flex', alignItems: 'center', flexDirection: 'column', mb:2}}>
+                        <Container sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', mb: 2 }}>
                             <Typography variant="h5">Take Home Salary:</Typography>
                             {/* <Typography variant="h5">{Math.round(salaryBreakdown.takeHomeSalary).toFixed(2)}</Typography> */}
                             <Typography variant="h5">{salaryBreakdown.takeHomeSalary.toLocaleString('en')}</Typography>
                         </Container>
-                        <Container sx={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+                        <Container sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
                             <Typography variant="h5">Total Deductable</Typography>
                             <Typography variant="h5">{salaryBreakdown.totalDeduction.toLocaleString('en')}</Typography>
                             <br />
