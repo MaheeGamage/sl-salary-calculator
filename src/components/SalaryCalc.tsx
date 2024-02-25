@@ -14,7 +14,7 @@ const SalaryCalc = () => {
                 <CardContent>
                     <Typography variant="h4" textAlign={"center"}>Salary Calculator</Typography>
                     <Typography variant="h6" textAlign={"center"} sx={{ mb: 4 }}>(Sri Lanka)</Typography>
-                    <Container sx={{ mb: 4, mt: 4 }}>
+                    <Container sx={{ mb: 4, mt: 4, display: "flex", justifyContent: "center" }} >
                         <FormControl>
                             <InputLabel htmlFor="outlined-adornment-amount">Enter your Salary</InputLabel>
                             <OutlinedInput
@@ -28,17 +28,16 @@ const SalaryCalc = () => {
                         </FormControl>
                     </Container>
                     <Container sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', mb: 2 }}>
-                        <Typography variant="h5">Take Home Salary:</Typography>
-                        {/* <Typography variant="h5">{Math.round(salaryBreakdown.takeHomeSalary).toFixed(2)}</Typography> */}
-                        <Typography variant="h5">{salaryBreakdown.takeHomeSalary.toLocaleString('en')}</Typography>
+                        <Typography variant="h6">Take Home Salary:</Typography>
+                        <Typography variant="h6">{salaryBreakdown.takeHomeSalary.toLocaleString('en')}</Typography>
                     </Container>
                     <Container sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                        <Typography variant="h5">Total Deductable</Typography>
-                        <Typography variant="h5">{salaryBreakdown.totalDeduction.toLocaleString('en')}</Typography>
+                        <Typography variant="h6">Total Deductable:</Typography>
+                        <Typography variant="h6">{salaryBreakdown.totalDeduction.toLocaleString('en')}</Typography>
                         <br />
                         <Typography variant="h6" fontWeight={'bold'}>Breakdown:</Typography>
-                        <Typography variant="h6">Tax: {salaryBreakdown.tax.toLocaleString('en')}</Typography>
-                        <Typography variant="h6">EPF: {salaryBreakdown.epf.toLocaleString('en')}</Typography>
+                        <Typography>Tax: {salaryBreakdown.tax.toLocaleString('en')}</Typography>
+                        <Typography>EPF: {salaryBreakdown.epf.toLocaleString('en')}</Typography>
 
                     </Container>
                 </CardContent>
