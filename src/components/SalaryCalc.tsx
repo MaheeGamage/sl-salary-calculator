@@ -16,8 +16,9 @@ const SalaryCalc = () => {
                     <Typography variant="h6" textAlign={"center"} sx={{ mb: 4 }}>(Sri Lanka)</Typography>
                     <Container sx={{ mb: 4, mt: 4, display: "flex", justifyContent: "center" }} >
                         <FormControl>
-                            <InputLabel htmlFor="outlined-adornment-amount">Enter your Salary</InputLabel>
+                            <InputLabel htmlFor="outlined-adornment-amount" sx={{ fontSize: '1.25rem' }}>Enter your Salary</InputLabel>
                             <OutlinedInput
+                                sx={{ fontSize: '1.5rem' }}
                                 id="outlined-adornment-amount"
                                 type="number"
                                 startAdornment={<InputAdornment position="start">Rs</InputAdornment>}
