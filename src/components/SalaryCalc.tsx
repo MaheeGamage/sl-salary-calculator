@@ -19,6 +19,7 @@ const SalaryCalc = () => {
                             <InputLabel htmlFor="outlined-adornment-amount" sx={{ fontSize: '1.25rem' }}>Enter your Salary</InputLabel>
                             <OutlinedInput
                                 sx={{ fontSize: '1.5rem' }}
+                                inputProps={{ style: { textAlign: 'right' } }}
                                 id="outlined-adornment-amount"
                                 type="number"
                                 startAdornment={<InputAdornment position="start">Rs</InputAdornment>}
