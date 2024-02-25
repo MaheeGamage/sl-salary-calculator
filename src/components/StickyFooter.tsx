@@ -1,8 +1,6 @@
 'use client'
 
 import * as React from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -15,13 +13,9 @@ function Copyright() {
       <Link color="inherit" href="https://mahee.me/" target="_blank">
         Mahee
       </Link>
-      {/* {new Date().getFullYear()} */}
     </Typography>
   );
 }
-
-// TODO remove, this demo shouldn't need to reset the theme.
-const defaultTheme = createTheme();
 
 export default function StickyFooter() {
   return (
@@ -31,7 +25,6 @@ export default function StickyFooter() {
         position: "fixed",
         bottom: 0,
         py: 3,
-
         px: 2,
         mt: 'auto',
         width: '100%',
@@ -39,6 +32,7 @@ export default function StickyFooter() {
           theme.palette.mode === 'light'
             ? theme.palette.grey[200]
             : theme.palette.grey[800],
+        boxShadow: '0 0 4px 2px rgba(0, 0, 0, 0.7)',
       }}
     >
       <Container maxWidth="sm">
